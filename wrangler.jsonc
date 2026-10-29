@@ -1,0 +1,19 @@
+{
+  // Cloudflare Pages project. `pages_build_output_dir` is the static asset root and the D1 binding
+  // is what functions/api/[[path]].js reads as env.DB. Deploying applies both.
+  //
+  //   npm run dev     # wrangler pages dev public — assets + functions + a local D1
+  //   npm run deploy  # upload public/ + functions/ to the football-outcomer project
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "football-outcomer",
+  "pages_build_output_dir": "./public",
+  "compatibility_date": "2026-09-01",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "football-outcomer",
+      "database_id": "2c16e37c-1fb5-47d0-9ba8-54158135f4bb",
+      "preview_database_id": "2c16e37c-1fb5-47d0-9ba8-54158135f4bb"
+    }
+  ]
+}
