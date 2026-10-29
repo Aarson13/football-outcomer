@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "wrangler pages dev public --port 8788",
-    "deploy": "wrangler pages deploy public --project-name football-outcomer",
+    "dev": "wrangler pages dev --port 8788",
+    "deploy:preview": "wrangler pages deploy --branch preview",
     "data": "node scripts/build-dataset.mjs",
     "test": "node --test"
   },

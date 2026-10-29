@@ -103,9 +103,13 @@ wrangler.jsonc              # Pages project + DB (D1) binding
 npm install
 npm run dev      # wrangler pages dev — assets + functions + a local D1 on :8788
 npm test         # 18 tests, including the walk-forward backtest
-npm run data     # rebuild the dataset (~500 event files) 
-npm run deploy   # upload public/ + functions/ to the football-outcomer project
+npm run data     # rebuild the dataset (~500 event files)
 ```
+
+**Deployment is a push.** The Pages project `football-outcomer` is connected to this repository:
+Cloudflare builds `main` with an empty build command and uploads `public/`, reading
+`wrangler.jsonc` for the output directory and the `DB` binding. `npm run deploy:preview` is the
+manual escape hatch for a direct upload; production should go through git.
 
 No framework, no bundler, no runtime dependencies: the page is three ES modules and one
 stylesheet. The Content-Security-Policy allows `'self'` plus the GitHub API and, for convenience,
